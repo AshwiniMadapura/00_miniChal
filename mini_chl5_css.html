@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>combinators</title>
+    </head>
+    <body>
+        <h3>CSS Combinators</h3>
+        <p>This is a header section and first sibling</p>
+        <p>This is a header section and second sibling</p>
+        <div class="container">
+          <p>This is first child in div</p>
+          <p>this is second child in div </p>
+          <span>
+              <p>this child is inside span- 1st  </p>
+              <p>this child is inside span- 2nd</p>
+          </span>
+        </div>
+        <p>This is a header section and first sibling</p>
+        <p>This is a header section and second sibling</p>
+
+        <style>
+
+            .container {
+                border: 1px solid blue;
+                /* Applies to all data inside class */
+            }
+            .container p{
+                color: red;
+                /* Applies to all p inside class  */
+            }
+            .container >p{
+                color: blue;
+                /* Applies to only immediate child inside class does not print span  */
+            }
+            .container ~p{
+                color: brown;
+                /* This is common to all siblings that is outside class */
+            }
+            .container +p{
+                color: blueviolet;
+                /* Applies only to first sibling outside class*/
+            } 
+        </style>
+    </body>
+</html>
